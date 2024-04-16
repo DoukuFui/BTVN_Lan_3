@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm Số Lớn Nhất</title>
+</head>
+<body>
+<input type="number" id="a" placeholder="Nhập a">
+<br>
+<input type="number" id="b" placeholder="Nhập b">
+<br>
+<input type="number" id="c" placeholder="Nhập c">
+<br>
+<button onclick="timMax()">Tìm số lớn nhất</button>
+<h3 id="kq"></h3>
+<script>
+    function timMax() {
+        let a = +document.getElementById("a").value;
+        let b = +document.getElementById("b").value;
+        let c = +document.getElementById("c").value;
+        let max = a;
+        if (max < b) max = b;
+        if (max < c) max = c;
+        if (Number.isInteger(a) && Number.isInteger(b) && Number.isInteger(c)){
+            document.getElementById("kq").innerHTML = "Số lớn nhất là " + max;
+        }
+        else document.getElementById("kq").innerHTML = "Số nhập vào phải là số nguyên";
+    }
+</script>
+</body>
+</html>

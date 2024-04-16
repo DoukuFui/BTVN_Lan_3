@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xếp Hạng Học Lực</title>
+</head>
+<body>
+<input type="number" id="a" placeholder="Nhập điểm kiểm tra">
+<br>
+<input type="number" id="b" placeholder="Nhập điểm thi giữa kỳ">
+<br>
+<input type="number" id="c" placeholder="Nhập điểm thi cuối kỳ">
+<br>
+<button onclick="xepHangHocLuc()">Xếp hạng học lực</button>
+<h3 id="dtb"></h3>
+<h3 id="kq"></h3>
+<script>
+    function xepHangHocLuc() {
+        let a = +document.getElementById("a").value;
+        let b = +document.getElementById("b").value;
+        let c = +document.getElementById("c").value;
+        let DTB = (a + b*2 + c*3)/6;
+        if (a < 0 || a > 10 || b < 0 || b > 10 || c < 0 || c > 10){
+            document.getElementById("kq").innerHTML = "Điểm nhập vào phải lớn hơn 0 và nhỏ hơn 10";
+        }
+        else {
+            document.getElementById("dtb").innerHTML = "Điểm trung bình cả học kỳ là " + DTB.toFixed(2);
+            if (DTB >= 8) document.getElementById("kq").innerHTML = "Giỏi";
+            else
+                if (DTB >= 6.5) document.getElementById("kq").innerHTML = "Yếu";
+                else
+                    if (DTB >= 5) document.getElementById("kq").innerHTML = "Trung Bình";
+                    else
+                        if (DTB >= 3.5) document.getElementById("kq").innerHTML = "Yếu";
+                        else document.getElementById("kq").innerHTML = "Kém";
+        }
+    }
+</script>
+</body>
+</html>

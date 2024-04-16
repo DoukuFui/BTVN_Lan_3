@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Xét Tuổi Học Lớp 10</title>
+</head>
+<body>
+<input type="number" id="a" placeholder="Nhập tuổi">
+<br>
+<button onclick="kiemTraTuoi()">Kiểm tra tuổi để vào lớp 10</button>
+<h3 id="kq"></h3>
+<script>
+  function kiemTraTuoi() {
+    let a = +document.getElementById("a").value;
+    if (a == 15) {
+      document.getElementById("kq").innerHTML = "Đủ tuổi để vào lớp 10";
+    }
+    else
+      if (a > 0 && a < 15) {
+        document.getElementById("kq").innerHTML = "Tuổi quá nhỏ để vào lớp 10";
+      }
+      else
+          if (a >15) {
+            document.getElementById("kq").innerHTML = "Tuổi quá lớn để vào lớp 10";
+          }
+          else document.getElementById("kq").innerHTML = "Độ tuổi nhập vào không hợp lệ";
+  }
+</script>
+</body>
+</html>

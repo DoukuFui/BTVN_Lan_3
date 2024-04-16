@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm Tra Số Nguyên</title>
+</head>
+<body>
+<input type="number" id="a" placeholder="Nhập số">
+<br>
+<button onclick="kiemTraSo()">Kiểm tra số nhập vào</button>
+<h3 id="kq"></h3>
+<script>
+    function kiemTraSo() {
+        let a = +document.getElementById("a").value;
+        if (Number.isInteger(a)) {
+            if (a > 0) {
+                document.getElementById("kq").innerHTML = "Số lớn hơn 0";
+            }
+            else
+                if (a < 0) {
+                    document.getElementById("kq").innerHTML = "Số nhỏ hơn 0";
+                }
+                else document.getElementById("kq").innerHTML = "Số nhập vào là 0";
+        }
+        else document.getElementById("kq").innerHTML = "Số nhập vào không phải là số nguyên";
+    }
+</script>
+</body>
+</html>
